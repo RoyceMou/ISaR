@@ -9,7 +9,7 @@ policy = GaussianGRUPolicy(
     env_spec=env.spec,
 )
 baseline = LinearFeatureBaseline(env_spec=env.spec)
-algo = ERWR(
+algo = VPG(
     env=env,
     policy=policy,
     baseline=baseline,
