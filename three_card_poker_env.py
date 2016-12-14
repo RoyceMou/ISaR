@@ -55,7 +55,6 @@ class ThreeCardPokerEnv(Env):
         info : a dictionary containing other diagnostic information from the previous action
         """
 
-
         next_observation = np.copy(self._state) # the game is over after one action, so the next state is arbitrary
 
         # the player folds if a is 0 and continues if a is 1
