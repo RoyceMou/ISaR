@@ -7,7 +7,7 @@ from rllab.policies.categorical_mlp_policy  import CategoricalMLPPolicy
 
 env = normalize(ThreeCardPokerEnv())
 policy = CategoricalMLPPolicy(env_spec=env.spec)
-baseline = LinearFeatureBaseline(env_spec=env.spec)
+baseline = ZeroBaseline(env_spec=env.spec)
 algo = VPG(
     env=env,
     policy=policy,
