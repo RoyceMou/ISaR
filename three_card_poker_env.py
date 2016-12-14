@@ -185,7 +185,7 @@ class ThreeCardPokerEnv(Env):
             else:
                 return self.compare_high(phand, dhand)
 
-     @staticmethod
+    @staticmethod
     def number_to_card(number):
         value = number % 13
         suit = number / 13
