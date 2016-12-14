@@ -5,7 +5,7 @@ from rllab.envs.normalized_env import normalize
 from rllab.policies.gaussian_mlp_policy import GaussianMLPPolicy
 
 env = normalize(ThreeCardPokerEnv())
-policy = GaussianMLPPolicy(
+policy = UniformControlPolicy(
     env_spec=env.spec,
 )
 baseline = LinearFeatureBaseline(env_spec=env.spec)
