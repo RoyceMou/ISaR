@@ -1,10 +1,10 @@
 from rllab.algos.trpo import TRPO
 from rllab.baselines.linear_feature_baseline import LinearFeatureBaseline
-from three_card_poker_env import PointEnv
+from three_card_poker_env import ThreeCardPokerEnv
 from rllab.envs.normalized_env import normalize
 from rllab.policies.gaussian_mlp_policy import GaussianMLPPolicy
 
-env = normalize(PointEnv())
+env = normalize(ThreeCardPokerEnv())
 policy = GaussianMLPPolicy(
     env_spec=env.spec,
 )
