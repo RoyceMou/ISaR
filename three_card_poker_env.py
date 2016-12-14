@@ -138,7 +138,7 @@ class ThreeCardPokerEnv(Env):
                 return 1
 
         elif self.has_straight(phand):
-            if self.has_straight_flush(dhand) or
+            if self.has_straight_flush(dhand) or \
                self.has_three_of_a_kind(dhand):
                 return 0
             elif self.has_straight(dhand):
@@ -147,8 +147,8 @@ class ThreeCardPokerEnv(Env):
                 return 1
 
         elif self.has_flush(phand):
-            if self.has_straight_flush(dhand) or
-               self.has_three_of_a_kind(dhand) or
+            if self.has_straight_flush(dhand) or \
+               self.has_three_of_a_kind(dhand) or \
                self.has_straight(dhand):
                 return 0
             elif self.has_flush(dhand):
@@ -157,9 +157,9 @@ class ThreeCardPokerEnv(Env):
                 return 1
 
         elif self.has_pair(phand):
-            if self.has_straight_flush(dhand) or 
-               self.has_three_of_a_kind(dhand) or
-               self.has_straight(dhand) or
+            if self.has_straight_flush(dhand) or \
+               self.has_three_of_a_kind(dhand) or \
+               self.has_straight(dhand) or \
                self.has_flush(dhand):
                 return 0
             elif self.has_pair(dhand):
@@ -176,10 +176,10 @@ class ThreeCardPokerEnv(Env):
                 return 1
 
         else:   # player has a high card
-            if self.has_straight_flush(dhand) or 
-               self.has_three_of_a_kind(dhand) or
-               self.has_straight(dhand) or
-               self.has_flush(dhand) or
+            if self.has_straight_flush(dhand) or \
+               self.has_three_of_a_kind(dhand) or \
+               self.has_straight(dhand) or \
+               self.has_flush(dhand) or \
                self.has_pair(dhand):
                 return 0
             else:
