@@ -1,5 +1,4 @@
 from rllab.algos.vpg import VPG
-# from rllab.baselines.linear_feature_baseline import LinearFeatureBaseline
 from rllab.baselines.zero_baseline import ZeroBaseline
 from three_card_poker_env import ThreeCardPokerEnv
 from rllab.envs.normalized_env import normalize

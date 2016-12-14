@@ -55,13 +55,11 @@ class ThreeCardPokerEnv(Env):
         info : a dictionary containing other diagnostic information from the previous action
         """
         print(action)
-        # action should be close to a one-hot vector encoding the actions
         # the player folds if a is 0 and continues if a is 1
-        a = 0 if action[0] > action[1] else 1
 
         next_observation = np.copy(self._state) # the game is over after one action, so the next state is arbitrary
 
-        if a == 0:
+        if action == 0:
             return Step(observation=next_observation, reward=-1, done=True)
 
         phand = tuple(self.number_to_card(number) for number in self._state[:3])
