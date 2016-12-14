@@ -11,5 +11,6 @@ algo = VPG(
     env=env,
     policy=policy,
     baseline=baseline,
+    n_itr=300
 )
 algo.train()
