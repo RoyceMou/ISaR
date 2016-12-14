@@ -54,6 +54,9 @@ class ThreeCardPokerEnv(Env):
         done : a boolean, indicating whether the episode has ended
         info : a dictionary containing other diagnostic information from the previous action
         """
+        print(action)
+        import sys
+        sys.exit(0)
 
         next_observation = np.copy(self._state) # the game is over after one action, so the next state is arbitrary
 
