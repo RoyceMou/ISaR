@@ -64,9 +64,18 @@ class ThreeCardPokerEnv(Env):
         phand = tuple(self.number_to_card(number) for number in self._state[:3])
         dhand = tuple(self.number_to_card(number) for number in self._state[3:])
 
+        # dealer folds if he does not have at least a queen high.
+        if self.has_straight_flush(dhand) or \
+           self.has_three_of_a_kind(dhand) or \
+           self.has_straight(dhand) or \
+           self.has_flush(dhand) or \
+           self.has_pair(dhand) or \
+           max(value for value, suit in dhand) > 9: # if the dealer has a queen high
+            is_player_hand_better = self.is_player_hand_better(phand, dhand)
+            reward = 4 if is_player_hand_better == 1 else -2 if is_player_hand_better == -1 else 0
+        else:
+            reward = 1
 
-        is_player_hand_better = self.is_player_hand_better(phand, dhand)
-        reward = 4 if is_player_hand_better == 1 else -2 if is_player_hand_better == -1 else 0
         return Step(observation=next_observation, reward=reward, done=True)
 
     @staticmethod
